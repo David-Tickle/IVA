@@ -29,10 +29,8 @@ class _FolderScreenState extends State<FolderScreen> {
       margin: EdgeInsets.only(bottom: 16.h),
       padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 10.h),
       decoration: BoxDecoration(
-        gradient:
-            LinearGradient(colors: [Color(0xf155E5E5E), Color(0xf50FFFFFF)]),
-        borderRadius: BorderRadius.circular(15.r),
-      ),
+          color: Colors.black.withOpacity(0.50),
+          borderRadius: BorderRadius.circular(15)),
       child: SingleChildScrollView(
         scrollDirection: Axis.vertical,
         child: Column(

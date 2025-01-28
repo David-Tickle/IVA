@@ -547,6 +547,75 @@ class _DocumentTabState extends State<DocumentTab> {
                                                 ),
                                               ),
                                             ],
+                                          ),
+                                          SizedBox(height: 15.h),
+                                          Row(
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.center,
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.end,
+                                            children: [
+                                              GestureDetector(
+                                                onTap: () {},
+                                                child: Text(
+                                                  'Clear All',
+                                                  textAlign: TextAlign.center,
+                                                  style: TextStyle(
+                                                    color: Colors.white
+                                                        .withOpacity(
+                                                            0.9599999785423279),
+                                                    fontSize: 14.sp,
+                                                    fontWeight: FontWeight.w400,
+                                                    letterSpacing: -0.14,
+                                                  ),
+                                                ),
+                                              ),
+                                              SizedBox(
+                                                width: 10.w,
+                                              ),
+                                              GestureDetector(
+                                                onTap: () {},
+                                                child: Container(
+                                                  width: 78.w,
+                                                  height: 32.h,
+                                                  padding: EdgeInsets.symmetric(
+                                                    horizontal: 10.w,
+                                                  ),
+                                                  decoration: ShapeDecoration(
+                                                    color: Color(0xFF5E5CE6),
+                                                    shape:
+                                                        RoundedRectangleBorder(
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              200.r),
+                                                    ),
+                                                  ),
+                                                  child: Row(
+                                                    mainAxisSize:
+                                                        MainAxisSize.min,
+                                                    mainAxisAlignment:
+                                                        MainAxisAlignment
+                                                            .center,
+                                                    crossAxisAlignment:
+                                                        CrossAxisAlignment
+                                                            .center,
+                                                    children: [
+                                                      Text(
+                                                        'Apply',
+                                                        style: TextStyle(
+                                                          color: Colors.white
+                                                              .withOpacity(
+                                                                  0.9599999785423279),
+                                                          fontSize: 14.sp,
+                                                          fontWeight:
+                                                              FontWeight.w600,
+                                                        ),
+                                                      ),
+                                                    ],
+                                                  ),
+                                                ),
+                                              )
+                                            ],
                                           )
                                         ],
                                       ),

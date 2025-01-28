@@ -8,7 +8,9 @@ import 'package:svg_flutter/svg.dart';
 
 class TabsScreen extends StatefulWidget {
   final VoidCallback onTapMinimize;
-  const TabsScreen({super.key, required this.onTapMinimize});
+  final VoidCallback onTapPdf;
+  const TabsScreen(
+      {super.key, required this.onTapMinimize, required this.onTapPdf});
 
   @override
   State<TabsScreen> createState() => _TabsScreenState();
@@ -163,7 +165,9 @@ class _TabsScreenState extends State<TabsScreen> {
                           ? RecentTab()
                           : _currentIndex == 1
                               ? DocumentTab()
-                              : ChunksTab(),
+                              : ChunksTab(
+                                  onTapAnyPdf: widget.onTapPdf,
+                                ),
                       SizedBox(height: 10.h),
                     ],
                   )

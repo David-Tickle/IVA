@@ -1,3 +1,4 @@
+import 'package:iva/screens/TabsScreen/chunks/reading_documents/reading_documents.dart';
 import 'package:iva/screens/TabsScreen/tabsScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -21,6 +22,7 @@ class _HomeScreenState extends State<HomeScreen> {
   // Speech to Text Variables
   stt.SpeechToText _speech = stt.SpeechToText();
   bool _isListening = false;
+  bool _isRightSide = false;
   String _speechText = '';
   String _currentLocaleId = 'en_US'; // Default locale
 
@@ -221,13 +223,26 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
             if (isActive)
               Positioned(
-                right: 10.w,
+                right: 16.w,
                 bottom: 20.h,
-                child: TabsScreen(onTapMinimize: () {
-                  setState(() {
-                    isActive = false;
-                  });
-                }),
+                child: TabsScreen(
+                  onTapMinimize: () {
+                    setState(() {
+                      isActive = false;
+                    });
+                  },
+                  onTapPdf: () {
+                    setState(() {
+                      _isRightSide = !_isRightSide;
+                    });
+                  },
+                ),
+              ),
+            if (_isRightSide)
+              Positioned(
+                left: 16.w,
+                bottom: 20.h,
+                child: ReadingDocuments(),
               ),
           ],
         ),
