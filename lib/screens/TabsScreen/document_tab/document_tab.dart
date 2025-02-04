@@ -268,7 +268,7 @@ class _DocumentTabState extends State<DocumentTab> {
                                           Text(
                                             'SORT BY',
                                             style: TextStyle(
-                                              color: Color(0xFF545454),
+                                              color: Color(0xF90FFFFFF),
                                               fontSize: 10.sp,
                                               fontWeight: FontWeight.w500,
                                               letterSpacing: 0.40,
@@ -323,7 +323,7 @@ class _DocumentTabState extends State<DocumentTab> {
                                                     Text(
                                                       radioTitle[index],
                                                       style: TextStyle(
-                                                        fontSize: 12.sp,
+                                                        fontSize: 11.sp,
                                                         fontWeight:
                                                             FontWeight.w500,
                                                         color: Colors.white
@@ -339,7 +339,7 @@ class _DocumentTabState extends State<DocumentTab> {
                                           Text(
                                             'DOCUMENT TYPE',
                                             style: TextStyle(
-                                              color: Color(0xFF545454),
+                                              color: Color(0xF90FFFFFF),
                                               fontSize: 10.sp,
                                               fontWeight: FontWeight.w500,
                                               letterSpacing: 0.40,
@@ -399,7 +399,7 @@ class _DocumentTabState extends State<DocumentTab> {
                                                                             Text(
                                                                               docType[index],
                                                                               style: TextStyle(
-                                                                                fontSize: 12.sp,
+                                                                                fontSize: 11.sp,
                                                                                 fontWeight: FontWeight.w500,
                                                                                 color: Colors.white.withOpacity(0.80),
                                                                               ),
@@ -427,7 +427,7 @@ class _DocumentTabState extends State<DocumentTab> {
                                           Text(
                                             'ACCESS',
                                             style: TextStyle(
-                                              color: Color(0xFF545454),
+                                              color: Color(0xF90FFFFFF),
                                               fontSize: 10.sp,
                                               fontWeight: FontWeight.w500,
                                               letterSpacing: 0.40,
@@ -472,9 +472,9 @@ class _DocumentTabState extends State<DocumentTab> {
                                                   ],
                                                 ),
                                               ),
-                                              SizedBox(
-                                                width: 10.w,
-                                              ),
+                                              // SizedBox(
+                                              //   width: 10.w,
+                                              // ),
                                               Container(
                                                 padding: EdgeInsets.symmetric(
                                                     vertical: 2.h,
@@ -509,9 +509,9 @@ class _DocumentTabState extends State<DocumentTab> {
                                                   ],
                                                 ),
                                               ),
-                                              SizedBox(
-                                                width: 10.w,
-                                              ),
+                                              // SizedBox(
+                                              //   width: 10.w,
+                                              // ),
                                               Container(
                                                 padding: EdgeInsets.symmetric(
                                                     vertical: 2.h,
@@ -564,7 +564,7 @@ class _DocumentTabState extends State<DocumentTab> {
                                                     color: Colors.white
                                                         .withOpacity(
                                                             0.9599999785423279),
-                                                    fontSize: 14.sp,
+                                                    fontSize: 12.sp,
                                                     fontWeight: FontWeight.w400,
                                                     letterSpacing: -0.14,
                                                   ),
@@ -606,7 +606,7 @@ class _DocumentTabState extends State<DocumentTab> {
                                                           color: Colors.white
                                                               .withOpacity(
                                                                   0.9599999785423279),
-                                                          fontSize: 14.sp,
+                                                          fontSize: 12.sp,
                                                           fontWeight:
                                                               FontWeight.w600,
                                                         ),
@@ -747,7 +747,7 @@ class _DocumentTabState extends State<DocumentTab> {
                     Text(
                       date,
                       style: TextStyle(
-                        color: Color(0xFF545454),
+                        color: Color(0xF90FFFFFF),
                         fontSize: 10.sp,
                         fontWeight: FontWeight.w400,
                         letterSpacing: -0.10,

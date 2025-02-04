@@ -1,11 +1,11 @@
 import 'package:iva/screens/TabsScreen/chunks/reading_documents/reading_documents.dart';
+import 'package:iva/screens/TabsScreen/chunks/reading_documents/search_screen/search_screen.dart';
 import 'package:iva/screens/TabsScreen/tabsScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:permission_handler/permission_handler.dart';
 import 'package:speech_to_text/speech_to_text.dart' as stt;
-import 'package:svg_flutter/svg.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -20,9 +20,10 @@ class _HomeScreenState extends State<HomeScreen> {
   bool _isWriting = false;
 
   // Speech to Text Variables
-  stt.SpeechToText _speech = stt.SpeechToText();
+  final stt.SpeechToText _speech = stt.SpeechToText();
   bool _isListening = false;
   bool _isRightSide = false;
+  bool _isSearch = false;
   String _speechText = '';
   String _currentLocaleId = 'en_US'; // Default locale
 
@@ -242,8 +243,21 @@ class _HomeScreenState extends State<HomeScreen> {
               Positioned(
                 left: 16.w,
                 bottom: 20.h,
-                child: ReadingDocuments(),
+                child: ReadingDocuments(
+                  onTapSearch: () {
+                    setState(() {
+                      _isSearch = !_isSearch;
+                    });
+                  },
+                  onTapClose: () {
+                    setState(() {
+                      _isRightSide = !_isRightSide;
+                    });
+                  },
+                ),
               ),
+            if (_isSearch && _isRightSide != false)
+              Positioned(left: 340.w, bottom: 20.h, child: SearchScreen()),
           ],
         ),
       ),
@@ -282,7 +296,7 @@ class _HomeScreenState extends State<HomeScreen> {
         borderRadius: BorderRadius.circular(10.r),
         image: DecorationImage(
           fit: BoxFit.cover,
-          image: AssetImage("assets/avatar.jpg"),
+          image: AssetImage("avatar.jpg"),
         ),
       ),
       child: Column(

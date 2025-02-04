@@ -167,7 +167,7 @@ class RecentTab extends StatelessWidget {
                     Text(
                       date,
                       style: TextStyle(
-                        color: Color(0xFF545454),
+                        color: Color(0xF90FFFFFF),
                         fontSize: 10.sp,
                         fontWeight: FontWeight.w400,
                         letterSpacing: -0.10,

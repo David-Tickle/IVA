@@ -1,6 +1,9 @@
 import 'package:iva/screens/TabsScreen/chunks/chunks.dart';
 import 'package:iva/screens/TabsScreen/document_tab/document_tab.dart';
+import 'package:iva/screens/TabsScreen/notification_screen/notification_screen.dart';
 import 'package:iva/screens/TabsScreen/recent_tab/recent_tab.dart';
+import 'package:iva/screens/TabsScreen/search_main/search_main.dart';
+import 'package:iva/screens/TabsScreen/setting_screen/setting_screen.dart';
 import 'package:iva/screens/folder_screen/folder_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -20,6 +23,8 @@ class _TabsScreenState extends State<TabsScreen> {
   int _currentIndex = 0;
   bool isFolder = false;
   bool isNotification = false;
+  bool isSetting = false;
+  bool isSearch = false;
   bool isNormal = true;
 
   @override
@@ -47,14 +52,26 @@ class _TabsScreenState extends State<TabsScreen> {
                   child: SvgPicture.asset("assets/minimize-01.svg"),
                 ),
                 SizedBox(width: 10.w),
-                SvgPicture.asset("assets/search-md.svg"),
+                GestureDetector(
+                    onTap: () {
+                      setState(() {
+                        isNotification = false;
+                        isNormal = false;
+                        isFolder = false;
+                        isSetting = false;
+                        isSearch = true;
+                      });
+                    },
+                    child: SvgPicture.asset("assets/search-md.svg")),
                 const Spacer(),
                 GestureDetector(
                     onTap: () {
                       setState(() {
-                        isFolder = !isFolder;
+                        isFolder = true;
                         isNormal = false;
                         isNotification = false;
+                        isSetting = false;
+                        isSearch = false;
                       });
                     },
                     child: SvgPicture.asset("assets/folder.svg")),
@@ -62,16 +79,30 @@ class _TabsScreenState extends State<TabsScreen> {
                 GestureDetector(
                     onTap: () {
                       setState(() {
-                        isNotification = !isNotification;
+                        isNotification = true;
                         isNormal = false;
                         isFolder = false;
+                        isSetting = false;
+                        isSearch = false;
                       });
                     },
                     child: SvgPicture.asset("assets/bell-02.svg")),
                 SizedBox(width: 10.w),
-                SvgPicture.asset("assets/settings-02.svg"),
+                GestureDetector(
+                    onTap: () {
+                      setState(() {
+                        isNotification = false;
+                        isNormal = false;
+                        isFolder = false;
+                        isSetting = true;
+                        isSearch = false;
+                      });
+                    },
+                    child: SvgPicture.asset("assets/settings-02.svg")),
                 SizedBox(width: 10.w),
-                const Icon(Icons.close, color: Colors.white),
+                GestureDetector(
+                    onTap: widget.onTapMinimize,
+                    child: const Icon(Icons.close, color: Colors.white)),
               ],
             ),
             SizedBox(height: 10.h),
@@ -180,20 +211,22 @@ class _TabsScreenState extends State<TabsScreen> {
                         },
                       )
                     : isNotification == true
-                        ? Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                'Notification',
-                                style: TextStyle(
-                                  color: Colors.white.withOpacity(0.96),
-                                  fontSize: 12.sp,
-                                  fontWeight: FontWeight.w600,
-                                ),
-                              ),
-                            ],
+                        ? NotificationScreen(
+                            onTapClose: () {
+                              setState(() {
+                                isNormal = true;
+                              });
+                            },
                           )
-                        : Container()
+                        : isSetting == true
+                            ? SettingScreen(onTapClose: () {
+                                setState(() {
+                                  isNormal = true;
+                                });
+                              })
+                            : isSearch == true
+                                ? SearchMain()
+                                : Container()
           ],
         ),
       ),

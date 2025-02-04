@@ -59,7 +59,7 @@ class _AllTabState extends State<AllTab> {
                                         Text(
                                           'SORT BY',
                                           style: TextStyle(
-                                            color: Color(0xFF545454),
+                                            color: Color(0xF90FFFFFF),
                                             fontSize: 10.sp,
                                             fontWeight: FontWeight.w500,
                                             letterSpacing: 0.40,
@@ -110,7 +110,7 @@ class _AllTabState extends State<AllTab> {
                                                   Text(
                                                     radioTitle[index],
                                                     style: TextStyle(
-                                                      fontSize: 12.sp,
+                                                      fontSize: 11.sp,
                                                       fontWeight:
                                                           FontWeight.w500,
                                                       color: Colors.white
@@ -126,7 +126,7 @@ class _AllTabState extends State<AllTab> {
                                         Text(
                                           'DOCUMENT TYPE',
                                           style: TextStyle(
-                                            color: Color(0xFF545454),
+                                            color: Color(0xF90FFFFFF),
                                             fontSize: 10.sp,
                                             fontWeight: FontWeight.w500,
                                             letterSpacing: 0.40,
@@ -187,7 +187,7 @@ class _AllTabState extends State<AllTab> {
                                                                         style:
                                                                             TextStyle(
                                                                           fontSize:
-                                                                              12.sp,
+                                                                              11.sp,
                                                                           fontWeight:
                                                                               FontWeight.w500,
                                                                           color: Colors
@@ -220,7 +220,7 @@ class _AllTabState extends State<AllTab> {
                                         Text(
                                           'ACCESS',
                                           style: TextStyle(
-                                            color: Color(0xFF545454),
+                                            color: Color(0xF90FFFFFF),
                                             fontSize: 10.sp,
                                             fontWeight: FontWeight.w500,
                                             letterSpacing: 0.40,
@@ -265,9 +265,9 @@ class _AllTabState extends State<AllTab> {
                                                 ],
                                               ),
                                             ),
-                                            SizedBox(
-                                              width: 10.w,
-                                            ),
+                                            // SizedBox(
+                                            //   width: 10.w,
+                                            // ),
                                             Container(
                                               padding: EdgeInsets.symmetric(
                                                   vertical: 2.h,
@@ -302,9 +302,9 @@ class _AllTabState extends State<AllTab> {
                                                 ],
                                               ),
                                             ),
-                                            SizedBox(
-                                              width: 10.w,
-                                            ),
+                                            // SizedBox(
+                                            //   width: 10.w,
+                                            // ),
                                             Container(
                                               padding: EdgeInsets.symmetric(
                                                   vertical: 2.h,
@@ -357,7 +357,7 @@ class _AllTabState extends State<AllTab> {
                                                   color: Colors.white
                                                       .withOpacity(
                                                           0.9599999785423279),
-                                                  fontSize: 14.sp,
+                                                  fontSize: 12.sp,
                                                   fontWeight: FontWeight.w400,
                                                   letterSpacing: -0.14,
                                                 ),
@@ -396,7 +396,7 @@ class _AllTabState extends State<AllTab> {
                                                         color: Colors.white
                                                             .withOpacity(
                                                                 0.9599999785423279),
-                                                        fontSize: 14.sp,
+                                                        fontSize: 12.sp,
                                                         fontWeight:
                                                             FontWeight.w600,
                                                       ),
@@ -624,65 +624,73 @@ class _AllTabState extends State<AllTab> {
                     ),
                     SizedBox(height: 10.h),
                     Padding(
-                      padding:  EdgeInsets.all(10.w),
+                      padding: EdgeInsets.all(10.w),
                       child: SizedBox(
                         width: 320.w,
                         height: 148.h,
                         child: DottedBorder(
                           color: Color(0xf70FFFFFF),
-                          dashPattern: [4,2],
+                          dashPattern: [4, 2],
                           borderType: BorderType.RRect,
                           radius: Radius.circular(12.r),
                           padding: EdgeInsets.all(6.w),
                           child: ClipRRect(
-                            borderRadius: BorderRadius.all(Radius.circular(12.r)),
-                            child:Center(
+                            borderRadius:
+                                BorderRadius.all(Radius.circular(12.r)),
+                            child: Center(
                               child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.center,mainAxisAlignment: MainAxisAlignment.center,
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
                                   Container(
                                     width: 48.w,
                                     height: 48.h,
                                     padding: const EdgeInsets.all(12),
                                     clipBehavior: Clip.antiAlias,
-                                    decoration:BoxDecoration(
-                                      color: Color(0x2D5E5E5E), shape: BoxShape.circle,
+                                    decoration: BoxDecoration(
+                                      color: Color(0x2D5E5E5E),
+                                      shape: BoxShape.circle,
                                     ),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.min,
-                                      mainAxisAlignment: MainAxisAlignment.center,
-                                      crossAxisAlignment: CrossAxisAlignment.center,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.center,
                                       children: [
-                                     SvgPicture.asset("assets/tabs_icon_and_photo/file-upload-01.svg")
+                                        SvgPicture.asset(
+                                            "assets/tabs_icon_and_photo/file-upload-01.svg")
                                       ],
                                     ),
                                   ),
-                                  SizedBox(height: 10.h,),
-                                  RichText(text: TextSpan(
-                                      text:
-                                        'Browse files',
+                                  SizedBox(
+                                    height: 10.h,
+                                  ),
+                                  RichText(
+                                    text: TextSpan(
+                                        text: 'Browse files',
                                         style: TextStyle(
-                                          color: Colors.white.withOpacity(0.9599999785423279),
+                                          color: Colors.white
+                                              .withOpacity(0.9599999785423279),
                                           fontSize: 14.sp,
                                           fontWeight: FontWeight.w600,
                                         ),
-                                    children: [
-                                      TextSpan(
-                                          text:
-                                            ' or drag and drop',
+                                        children: [
+                                          TextSpan(
+                                            text: ' or drag and drop',
                                             style: TextStyle(
                                               color: Color(0xf70FFFFFF),
                                               fontSize: 14.sp,
                                               fontWeight: FontWeight.w400,
                                               letterSpacing: -0.14,
                                             ),
-
-                                      )
-                                    ]
-                                      ),
-
+                                          )
+                                        ]),
                                   ),
-                                  SizedBox(height: 10.h,),Text(
+                                  SizedBox(
+                                    height: 10.h,
+                                  ),
+                                  Text(
                                     'Max size 400MB',
                                     style: TextStyle(
                                       color: Color(0xf70FFFFFF),
@@ -690,7 +698,6 @@ class _AllTabState extends State<AllTab> {
                                       fontWeight: FontWeight.w400,
                                     ),
                                   )
-
                                 ],
                               ),
                             ),
@@ -698,100 +705,15 @@ class _AllTabState extends State<AllTab> {
                         ),
                       ),
                     ),
-                    SizedBox(height: 15.h,),
-
-                    Container(
-                      width: 320.w,
-                      height: 56.h,
-                      margin: EdgeInsets.symmetric(horizontal: 10.w),
-                      padding:  EdgeInsets.symmetric(horizontal: 10.w,vertical: 5.h),
-                      decoration: ShapeDecoration(
-                        color: Colors.black.withOpacity(0.07999999821186066),
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(12.r),
-                        ),
-                      ),
-                      child: Row(
-                        mainAxisSize: MainAxisSize.min,
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children:[
-                          SvgPicture.asset("assets/tabs_icon_and_photo/fig.svg"),
-                          Expanded(
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,mainAxisAlignment: MainAxisAlignment.start,
-                              children: [
-                                Row(
-                                  crossAxisAlignment: CrossAxisAlignment.center,mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Text(
-                                      'Screenshot.jpg',
-                                      style: TextStyle(
-                                        color: Colors.white.withOpacity(0.9599999785423279),
-                                        fontSize: 12.sp,
-                                        fontWeight: FontWeight.w600,
-                                      ),
-                                    ),
-                                    Icon(Icons.close,color: Color(0xf70FFFFFF),size: 20.r,)
-
-                                  ],
-                                ),
-                                Row(
-                                  crossAxisAlignment: CrossAxisAlignment.center,
-                                  children: [
-
-                                    Text(
-                                      '0.5MB / 1.4MB',
-                                      textAlign: TextAlign.center,
-                                      style: TextStyle(
-                                        color: Color(0xf70FFFFFF),
-                                        fontSize: 10.sp,
-                                        fontWeight: FontWeight.w400,
-                                        letterSpacing: -0.10,
-                                      ),
-                                    ),
-                                    SizedBox(width: 5.w,),
-                                    SizedBox(width: 95.w,
-                                      height: 4.h,
-                                      child: ClipRRect(
-                                        borderRadius: BorderRadius.circular(10.r),
-                                        child: LinearProgressBar(
-                                          maxSteps:100,
-                                          progressType: LinearProgressBar.progressTypeLinear,
-                                          currentStep: 80,
-                                          progressColor: Colors.white.withOpacity(0.80),
-                                          backgroundColor:Color(0x7FD0D0D0),
-                                          borderRadius: BorderRadius.circular(10.r), //  NEW
-                                        ),
-                                      ),
-                                    ),
-                                    SizedBox(width: 5.w,),
-                                    Text(
-                                      '80%',
-                                      style: TextStyle(
-                                        color: Colors.white.withOpacity(0.9599999785423279),
-                                        fontSize: 10.sp,
-                                        fontWeight: FontWeight.w400,
-                                        letterSpacing: -0.10,
-                                      ),
-                                    )
-
-                                  ],
-                                )
-
-                              ],
-                            ),
-                          )
-
-                        ]
-                      ),
+                    SizedBox(
+                      height: 15.h,
                     ),
-                    SizedBox(height: 15.h,),
                     Container(
                       width: 320.w,
                       height: 56.h,
                       margin: EdgeInsets.symmetric(horizontal: 10.w),
-                      padding:  EdgeInsets.symmetric(horizontal: 10.w,vertical: 5.h),
+                      padding:
+                          EdgeInsets.symmetric(horizontal: 10.w, vertical: 5.h),
                       decoration: ShapeDecoration(
                         color: Colors.black.withOpacity(0.07999999821186066),
                         shape: RoundedRectangleBorder(
@@ -802,31 +724,40 @@ class _AllTabState extends State<AllTab> {
                           mainAxisSize: MainAxisSize.min,
                           mainAxisAlignment: MainAxisAlignment.start,
                           crossAxisAlignment: CrossAxisAlignment.start,
-                          children:[
-                            SvgPicture.asset("assets/tabs_icon_and_photo/fig.svg"),
+                          children: [
+                            SvgPicture.asset(
+                                "assets/tabs_icon_and_photo/fig.svg"),
                             Expanded(
                               child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,mainAxisAlignment: MainAxisAlignment.start,
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                mainAxisAlignment: MainAxisAlignment.start,
                                 children: [
                                   Row(
-                                    crossAxisAlignment: CrossAxisAlignment.center,mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.center,
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
                                     children: [
                                       Text(
                                         'Screenshot.jpg',
                                         style: TextStyle(
-                                          color: Colors.white.withOpacity(0.9599999785423279),
+                                          color: Colors.white
+                                              .withOpacity(0.9599999785423279),
                                           fontSize: 12.sp,
                                           fontWeight: FontWeight.w600,
                                         ),
                                       ),
-                                      Icon(Icons.close,color: Color(0xf70FFFFFF),size: 20.r,)
-
+                                      Icon(
+                                        Icons.close,
+                                        color: Color(0xf70FFFFFF),
+                                        size: 20.r,
+                                      )
                                     ],
                                   ),
                                   Row(
-                                    crossAxisAlignment: CrossAxisAlignment.center,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.center,
                                     children: [
-
                                       Text(
                                         '0.5MB / 1.4MB',
                                         textAlign: TextAlign.center,
@@ -837,38 +768,159 @@ class _AllTabState extends State<AllTab> {
                                           letterSpacing: -0.10,
                                         ),
                                       ),
-                                      SizedBox(width: 5.w,),
+                                      SizedBox(
+                                        width: 5.w,
+                                      ),
+                                      SizedBox(
+                                        width: 95.w,
+                                        height: 4.h,
+                                        child: ClipRRect(
+                                          borderRadius:
+                                              BorderRadius.circular(10.r),
+                                          child: LinearProgressBar(
+                                            maxSteps: 100,
+                                            progressType: LinearProgressBar
+                                                .progressTypeLinear,
+                                            currentStep: 80,
+                                            progressColor:
+                                                Colors.white.withOpacity(0.80),
+                                            backgroundColor: Color(0x7FD0D0D0),
+                                            borderRadius: BorderRadius.circular(
+                                                10.r), //  NEW
+                                          ),
+                                        ),
+                                      ),
+                                      SizedBox(
+                                        width: 5.w,
+                                      ),
+                                      Text(
+                                        '80%',
+                                        style: TextStyle(
+                                          color: Colors.white
+                                              .withOpacity(0.9599999785423279),
+                                          fontSize: 10.sp,
+                                          fontWeight: FontWeight.w400,
+                                          letterSpacing: -0.10,
+                                        ),
+                                      )
+                                    ],
+                                  )
+                                ],
+                              ),
+                            )
+                          ]),
+                    ),
+                    SizedBox(
+                      height: 15.h,
+                    ),
+                    Container(
+                      width: 320.w,
+                      height: 56.h,
+                      margin: EdgeInsets.symmetric(horizontal: 10.w),
+                      padding:
+                          EdgeInsets.symmetric(horizontal: 10.w, vertical: 5.h),
+                      decoration: ShapeDecoration(
+                        color: Colors.black.withOpacity(0.07999999821186066),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(12.r),
+                        ),
+                      ),
+                      child: Row(
+                          mainAxisSize: MainAxisSize.min,
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            SvgPicture.asset(
+                                "assets/tabs_icon_and_photo/fig.svg"),
+                            Expanded(
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                children: [
+                                  Row(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.center,
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      Text(
+                                        'Screenshot.jpg',
+                                        style: TextStyle(
+                                          color: Colors.white
+                                              .withOpacity(0.9599999785423279),
+                                          fontSize: 12.sp,
+                                          fontWeight: FontWeight.w600,
+                                        ),
+                                      ),
+                                      Icon(
+                                        Icons.close,
+                                        color: Color(0xf70FFFFFF),
+                                        size: 20.r,
+                                      )
+                                    ],
+                                  ),
+                                  Row(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.center,
+                                    children: [
+                                      Text(
+                                        '0.5MB / 1.4MB',
+                                        textAlign: TextAlign.center,
+                                        style: TextStyle(
+                                          color: Color(0xf70FFFFFF),
+                                          fontSize: 10.sp,
+                                          fontWeight: FontWeight.w400,
+                                          letterSpacing: -0.10,
+                                        ),
+                                      ),
+                                      SizedBox(
+                                        width: 5.w,
+                                      ),
                                       Container(
                                         width: 66.w,
                                         height: 16.h,
                                         decoration: ShapeDecoration(
-                                          color: Colors.black.withOpacity(0.10000000149011612),
+                                          color: Colors.black
+                                              .withOpacity(0.10000000149011612),
                                           shape: RoundedRectangleBorder(
-                                            borderRadius: BorderRadius.circular(200),
+                                            borderRadius:
+                                                BorderRadius.circular(200),
                                           ),
                                         ),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.min,
-                                          mainAxisAlignment: MainAxisAlignment.center,
-                                          crossAxisAlignment: CrossAxisAlignment.center,
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.center,
                                           children: [
-                                            Icon(Icons.done,size: 14.r,color: Color(0xf70FFFFFF),),
+                                            Icon(
+                                              Icons.done,
+                                              size: 14.r,
+                                              color: Color(0xf70FFFFFF),
+                                            ),
                                             SizedBox(width: 2.w),
                                             Container(
                                               width: 42.w,
-                                              padding: const EdgeInsets.only(bottom: 1),
+                                              padding: const EdgeInsets.only(
+                                                  bottom: 1),
                                               child: Row(
                                                 mainAxisSize: MainAxisSize.min,
-                                                mainAxisAlignment: MainAxisAlignment.center,
-                                                crossAxisAlignment: CrossAxisAlignment.center,
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment.center,
+                                                crossAxisAlignment:
+                                                    CrossAxisAlignment.center,
                                                 children: [
                                                   Text(
                                                     'Uploaded',
                                                     textAlign: TextAlign.center,
                                                     style: TextStyle(
-                                                      color: Colors.white.withOpacity(0.9599999785423279),
+                                                      color: Colors.white
+                                                          .withOpacity(
+                                                              0.9599999785423279),
                                                       fontSize: 10.sp,
-                                                      fontWeight: FontWeight.w400,
+                                                      fontWeight:
+                                                          FontWeight.w400,
                                                       letterSpacing: -0.10,
                                                     ),
                                                   ),
@@ -878,18 +930,16 @@ class _AllTabState extends State<AllTab> {
                                           ],
                                         ),
                                       )
-
                                     ],
                                   )
-
                                 ],
                               ),
                             )
-
-                          ]
-                      ),
+                          ]),
                     ),
-                    SizedBox(height: 15.h,),
+                    SizedBox(
+                      height: 15.h,
+                    ),
                     Padding(
                       padding: EdgeInsets.symmetric(horizontal: 10.w),
                       child: Row(
@@ -898,14 +948,16 @@ class _AllTabState extends State<AllTab> {
                           Text(
                             'Upload to',
                             style: TextStyle(
-                              color: Colors.white.withOpacity(0.9599999785423279),
+                              color:
+                                  Colors.white.withOpacity(0.9599999785423279),
                               fontSize: 14.sp,
                               fontWeight: FontWeight.w400,
                               letterSpacing: -0.14,
                             ),
                           ),
-                          SizedBox(width: 10.w,),
-
+                          SizedBox(
+                            width: 10.w,
+                          ),
                           Expanded(
                             child: Container(
                               padding: EdgeInsets.all(2.w),
@@ -916,10 +968,16 @@ class _AllTabState extends State<AllTab> {
                               child: Row(
                                 crossAxisAlignment: CrossAxisAlignment.center,
                                 children: [
-
-                                  buildNavItem(index: 0, assetPath: "assets/tabs_icon_and_photo/lock-01.svg", label: "Personal"),
+                                  buildNavItem(
+                                      index: 0,
+                                      assetPath:
+                                          "assets/tabs_icon_and_photo/lock-01.svg",
+                                      label: "Personal"),
                                   SizedBox(width: 5.w),
-                                  buildNavItem(index: 1, assetPath: "assets/globe-04.svg", label: "Global"),
+                                  buildNavItem(
+                                      index: 1,
+                                      assetPath: "assets/globe-04.svg",
+                                      label: "Global"),
                                 ],
                               ),
                             ),
@@ -927,13 +985,15 @@ class _AllTabState extends State<AllTab> {
                         ],
                       ),
                     ),
-                        SizedBox(height: 15.h,),
+                    SizedBox(
+                      height: 15.h,
+                    ),
                     Padding(
                       padding: EdgeInsets.symmetric(horizontal: 10.w),
                       child: Row(
-                        crossAxisAlignment: CrossAxisAlignment.center,mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-
                           Expanded(
                             child: Container(
                               height: 40.h,
@@ -951,7 +1011,8 @@ class _AllTabState extends State<AllTab> {
                                   Text(
                                     'Upload',
                                     style: TextStyle(
-                                      color: Colors.white.withOpacity(0.9599999785423279),
+                                      color: Colors.white
+                                          .withOpacity(0.9599999785423279),
                                       fontSize: 14.sp,
                                       fontWeight: FontWeight.w600,
                                     ),
@@ -960,7 +1021,9 @@ class _AllTabState extends State<AllTab> {
                               ),
                             ),
                           ),
-                          SizedBox(width: 7.w,),
+                          SizedBox(
+                            width: 7.w,
+                          ),
                           Expanded(
                             child: Container(
                               height: 40.h,
@@ -978,7 +1041,8 @@ class _AllTabState extends State<AllTab> {
                                   Text(
                                     'Cancel',
                                     style: TextStyle(
-                                      color: Colors.white.withOpacity(0.9599999785423279),
+                                      color: Colors.white
+                                          .withOpacity(0.9599999785423279),
                                       fontSize: 14.sp,
                                       fontWeight: FontWeight.w600,
                                     ),
@@ -990,8 +1054,9 @@ class _AllTabState extends State<AllTab> {
                         ],
                       ),
                     ),
-                    SizedBox(height: 15.h,),
-
+                    SizedBox(
+                      height: 15.h,
+                    ),
                   ],
                 ),
               ),
@@ -1064,7 +1129,7 @@ class _AllTabState extends State<AllTab> {
                     Text(
                       date,
                       style: TextStyle(
-                        color: Color(0xFF545454),
+                        color: Color(0xF90FFFFFF),
                         fontSize: 10.sp,
                         fontWeight: FontWeight.w400,
                         letterSpacing: -0.10,
@@ -1082,6 +1147,7 @@ class _AllTabState extends State<AllTab> {
       ),
     );
   }
+
   Widget buildNavItem({
     required int index,
     required String assetPath,
@@ -1100,7 +1166,9 @@ class _AllTabState extends State<AllTab> {
           decoration: ShapeDecoration(
             color: isSelected ? Color(0xF90C9D2D6) : null,
             shape: RoundedRectangleBorder(
-              side: isSelected ? BorderSide(width: 0.5.w, color: Colors.white) : BorderSide.none,
+              side: isSelected
+                  ? BorderSide(width: 0.5.w, color: Colors.white)
+                  : BorderSide.none,
               borderRadius: BorderRadius.circular(20.r),
             ),
             shadows: [
@@ -1133,4 +1201,3 @@ class _AllTabState extends State<AllTab> {
     );
   }
 }
-

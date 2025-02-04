@@ -54,297 +54,369 @@ class _ChunksTabState extends State<ChunksTab> {
                   itemBuilder: (context) {
                     return [
                       PopupMenuItem(
-                          padding: EdgeInsets.zero,
-                          child: StatefulBuilder(
-                            builder: (BuildContext context,
-                                void Function(void Function()) setState) {
-                              return Padding(
-                                padding: EdgeInsets.all(15.w),
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  mainAxisAlignment: MainAxisAlignment.start,
-                                  children: [
-                                    Text(
-                                      'SORT BY',
-                                      style: TextStyle(
-                                        color: Color(0xFF545454),
-                                        fontSize: 10.sp,
-                                        fontWeight: FontWeight.w500,
-                                        letterSpacing: 0.40,
-                                      ),
-                                    ),
-                                    SizedBox(height: 15.h),
-                                    Wrap(
-                                      runSpacing: 20.w,
-                                      children: List.generate(
-                                        radioTitle.length,
-                                        (index) => Padding(
-                                          padding: EdgeInsets.only(right: 15.w),
-                                          child: Row(
-                                            mainAxisSize: MainAxisSize.min,
-                                            crossAxisAlignment:
-                                                CrossAxisAlignment.center,
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.start,
-                                            children: [
-                                              GestureDetector(
-                                                onTap: () {
-                                                  setState(() {
-                                                    _selectedValue = index;
-                                                  });
-                                                },
-                                                child: Container(
-                                                  padding: EdgeInsets.all(2.w),
-                                                  decoration: BoxDecoration(
-                                                    shape: BoxShape.circle,
-                                                    border: Border.all(
-                                                        color:
-                                                            Color(0xff545454)),
-                                                  ),
-                                                  child: CircleAvatar(
-                                                    radius: 5.r,
-                                                    backgroundColor:
-                                                        _selectedValue == index
-                                                            ? Colors.white
-                                                            : Colors
-                                                                .transparent,
-                                                  ),
-                                                ),
-                                              ),
-                                              SizedBox(width: 10.w),
-                                              Text(
-                                                radioTitle[index],
-                                                style: TextStyle(
-                                                  fontSize: 12.sp,
-                                                  fontWeight: FontWeight.w500,
-                                                  color: Colors.white
-                                                      .withOpacity(0.80),
-                                                ),
-                                              ),
-                                            ],
-                                          ),
+                        padding: EdgeInsets.zero,
+                        child: SizedBox(
+                            width: 400.w,
+                            child: StatefulBuilder(
+                              builder: (BuildContext context,
+                                  void Function(void Function()) setState) {
+                                return Padding(
+                                  padding: EdgeInsets.all(15.w),
+                                  child: Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    mainAxisAlignment: MainAxisAlignment.start,
+                                    children: [
+                                      Text(
+                                        'SORT BY',
+                                        style: TextStyle(
+                                          color: Color(0xF90FFFFFF),
+                                          fontSize: 10.sp,
+                                          fontWeight: FontWeight.w500,
+                                          letterSpacing: 0.40,
                                         ),
                                       ),
-                                    ),
-                                    SizedBox(height: 15.h),
-                                    Text(
-                                      'DOCUMENT TYPE',
-                                      style: TextStyle(
-                                        color: Color(0xFF545454),
-                                        fontSize: 10.sp,
-                                        fontWeight: FontWeight.w500,
-                                        letterSpacing: 0.40,
-                                      ),
-                                    ),
-                                    SizedBox(height: 10.h),
-                                    Wrap(
-                                      runSpacing: 10.w,
-                                      children: List.generate(
-                                          docType.length,
-                                          (index) => StatefulBuilder(
-                                                builder: (BuildContext context,
-                                                    void Function(
-                                                            void Function())
-                                                        setState) {
-                                                  return Padding(
-                                                    padding: EdgeInsets.only(
-                                                        right: 5.w),
-                                                    child: Row(
-                                                      mainAxisSize:
-                                                          MainAxisSize.min,
-                                                      crossAxisAlignment:
-                                                          CrossAxisAlignment
-                                                              .center,
-                                                      mainAxisAlignment:
-                                                          MainAxisAlignment
-                                                              .start,
-                                                      children: [
-                                                        GestureDetector(
-                                                          onTap: () {
-                                                            setState(() {
-                                                              _selectedType =
-                                                                  index;
-                                                            });
-                                                          },
-                                                          child: Container(
-                                                              padding: EdgeInsets
-                                                                  .symmetric(
-                                                                      horizontal:
-                                                                          8.w,
-                                                                      vertical:
-                                                                          3.h),
-                                                              decoration: BoxDecoration(
-                                                                  color: Colors
-                                                                      .black,
-                                                                  borderRadius:
-                                                                      BorderRadius
-                                                                          .circular(
-                                                                              30.r)),
-                                                              child: Row(
-                                                                crossAxisAlignment:
-                                                                    CrossAxisAlignment
-                                                                        .center,
-                                                                children: [
-                                                                  Text(
-                                                                    docType[
-                                                                        index],
-                                                                    style:
-                                                                        TextStyle(
-                                                                      fontSize:
-                                                                          12.sp,
-                                                                      fontWeight:
-                                                                          FontWeight
-                                                                              .w500,
-                                                                      color: Colors
-                                                                          .white
-                                                                          .withOpacity(
-                                                                              0.80),
-                                                                    ),
-                                                                  ),
-                                                                  SizedBox(
-                                                                    width: 8.w,
-                                                                  ),
-                                                                  _selectedType ==
-                                                                          index
-                                                                      ? Icon(
-                                                                          Icons
-                                                                              .close,
-                                                                          color:
-                                                                              Colors.white,
-                                                                          size:
-                                                                              18.r,
-                                                                        )
-                                                                      : SizedBox()
-                                                                ],
-                                                              )),
-                                                        ),
-                                                      ],
+                                      SizedBox(height: 15.h),
+                                      Wrap(
+                                        runSpacing: 20.w,
+                                        children: List.generate(
+                                          radioTitle.length,
+                                          (index) => Padding(
+                                            padding:
+                                                EdgeInsets.only(right: 15.w),
+                                            child: Row(
+                                              mainAxisSize: MainAxisSize.min,
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.center,
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.start,
+                                              children: [
+                                                GestureDetector(
+                                                  onTap: () {
+                                                    setState(() {
+                                                      _selectedValue = index;
+                                                    });
+                                                  },
+                                                  child: Container(
+                                                    padding:
+                                                        EdgeInsets.all(2.w),
+                                                    decoration: BoxDecoration(
+                                                      shape: BoxShape.circle,
+                                                      border: Border.all(
+                                                          color: Color(
+                                                              0xff545454)),
                                                     ),
-                                                  );
-                                                },
-                                              )),
-                                    ),
-                                    SizedBox(height: 10.h),
-                                    Text(
-                                      'ACCESS',
-                                      style: TextStyle(
-                                        color: Color(0xFF545454),
-                                        fontSize: 10.sp,
-                                        fontWeight: FontWeight.w500,
-                                        letterSpacing: 0.40,
+                                                    child: CircleAvatar(
+                                                      radius: 5.r,
+                                                      backgroundColor:
+                                                          _selectedValue ==
+                                                                  index
+                                                              ? Colors.white
+                                                              : Colors
+                                                                  .transparent,
+                                                    ),
+                                                  ),
+                                                ),
+                                                SizedBox(width: 10.w),
+                                                Text(
+                                                  radioTitle[index],
+                                                  style: TextStyle(
+                                                    fontSize: 11.sp,
+                                                    fontWeight: FontWeight.w500,
+                                                    color: Colors.white
+                                                        .withOpacity(0.80),
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
+                                          ),
+                                        ),
                                       ),
-                                    ),
-                                    SizedBox(height: 15.h),
-                                    Row(
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.center,
-                                      children: [
-                                        Container(
-                                          padding: EdgeInsets.symmetric(
-                                              vertical: 2.h, horizontal: 4.w),
-                                          decoration: ShapeDecoration(
-                                            color:
-                                                Colors.black.withOpacity(0.1),
-                                            shape: RoundedRectangleBorder(
-                                              borderRadius:
-                                                  BorderRadius.circular(200.r),
+                                      SizedBox(height: 15.h),
+                                      Text(
+                                        'DOCUMENT TYPE',
+                                        style: TextStyle(
+                                          color: Color(0xF90FFFFFF),
+                                          fontSize: 10.sp,
+                                          fontWeight: FontWeight.w500,
+                                          letterSpacing: 0.40,
+                                        ),
+                                      ),
+                                      SizedBox(height: 10.h),
+                                      Wrap(
+                                        runSpacing: 10.w,
+                                        children: List.generate(
+                                            docType.length,
+                                            (index) => StatefulBuilder(
+                                                  builder: (BuildContext
+                                                          context,
+                                                      void Function(
+                                                              void Function())
+                                                          setState) {
+                                                    return Padding(
+                                                      padding: EdgeInsets.only(
+                                                          right: 5.w),
+                                                      child: Row(
+                                                        mainAxisSize:
+                                                            MainAxisSize.min,
+                                                        crossAxisAlignment:
+                                                            CrossAxisAlignment
+                                                                .center,
+                                                        mainAxisAlignment:
+                                                            MainAxisAlignment
+                                                                .start,
+                                                        children: [
+                                                          GestureDetector(
+                                                            onTap: () {
+                                                              setState(() {
+                                                                _selectedType =
+                                                                    index;
+                                                              });
+                                                            },
+                                                            child: Container(
+                                                                padding: EdgeInsets
+                                                                    .symmetric(
+                                                                        horizontal:
+                                                                            8.w,
+                                                                        vertical: 3
+                                                                            .h),
+                                                                decoration: BoxDecoration(
+                                                                    color: Colors
+                                                                        .black,
+                                                                    borderRadius:
+                                                                        BorderRadius.circular(
+                                                                            30.r)),
+                                                                child: Row(
+                                                                  crossAxisAlignment:
+                                                                      CrossAxisAlignment
+                                                                          .center,
+                                                                  children: [
+                                                                    Text(
+                                                                      docType[
+                                                                          index],
+                                                                      style:
+                                                                          TextStyle(
+                                                                        fontSize:
+                                                                            11.sp,
+                                                                        fontWeight:
+                                                                            FontWeight.w500,
+                                                                        color: Colors
+                                                                            .white
+                                                                            .withOpacity(0.80),
+                                                                      ),
+                                                                    ),
+                                                                    SizedBox(
+                                                                      width:
+                                                                          8.w,
+                                                                    ),
+                                                                    _selectedType ==
+                                                                            index
+                                                                        ? Icon(
+                                                                            Icons.close,
+                                                                            color:
+                                                                                Colors.white,
+                                                                            size:
+                                                                                18.r,
+                                                                          )
+                                                                        : SizedBox()
+                                                                  ],
+                                                                )),
+                                                          ),
+                                                        ],
+                                                      ),
+                                                    );
+                                                  },
+                                                )),
+                                      ),
+                                      SizedBox(height: 10.h),
+                                      Text(
+                                        'ACCESS',
+                                        style: TextStyle(
+                                          color: Color(0xF90FFFFFF),
+                                          fontSize: 10.sp,
+                                          fontWeight: FontWeight.w500,
+                                          letterSpacing: 0.40,
+                                        ),
+                                      ),
+                                      SizedBox(height: 15.h),
+                                      Row(
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.center,
+                                        children: [
+                                          Container(
+                                            padding: EdgeInsets.symmetric(
+                                                vertical: 2.h, horizontal: 4.w),
+                                            decoration: ShapeDecoration(
+                                              color:
+                                                  Colors.black.withOpacity(0.1),
+                                              shape: RoundedRectangleBorder(
+                                                borderRadius:
+                                                    BorderRadius.circular(
+                                                        200.r),
+                                              ),
+                                            ),
+                                            child: Row(
+                                              children: [
+                                                SvgPicture.asset(
+                                                    height: 17.h,
+                                                    width: 17.w,
+                                                    "assets/globe-04.svg"),
+                                                SizedBox(width: 5.w),
+                                                Text(
+                                                  "Global",
+                                                  style: TextStyle(
+                                                    color: Colors.white
+                                                        .withOpacity(0.96),
+                                                    fontSize: 10.sp,
+                                                    fontWeight: FontWeight.w400,
+                                                    letterSpacing: -0.10,
+                                                  ),
+                                                ),
+                                              ],
                                             ),
                                           ),
-                                          child: Row(
-                                            children: [
-                                              SvgPicture.asset(
-                                                  height: 17.h,
-                                                  width: 17.w,
-                                                  "assets/globe-04.svg"),
-                                              SizedBox(width: 5.w),
-                                              Text(
-                                                "Global",
-                                                style: TextStyle(
-                                                  color: Colors.white
-                                                      .withOpacity(0.96),
-                                                  fontSize: 10.sp,
-                                                  fontWeight: FontWeight.w400,
-                                                  letterSpacing: -0.10,
-                                                ),
+                                          // SizedBox(
+                                          //   width: 10.w,
+                                          // ),
+                                          Container(
+                                            padding: EdgeInsets.symmetric(
+                                                vertical: 2.h, horizontal: 4.w),
+                                            decoration: ShapeDecoration(
+                                              color:
+                                                  Colors.black.withOpacity(0.1),
+                                              shape: RoundedRectangleBorder(
+                                                borderRadius:
+                                                    BorderRadius.circular(
+                                                        200.r),
                                               ),
-                                            ],
-                                          ),
-                                        ),
-                                        SizedBox(
-                                          width: 10.w,
-                                        ),
-                                        Container(
-                                          padding: EdgeInsets.symmetric(
-                                              vertical: 2.h, horizontal: 4.w),
-                                          decoration: ShapeDecoration(
-                                            color:
-                                                Colors.black.withOpacity(0.1),
-                                            shape: RoundedRectangleBorder(
-                                              borderRadius:
-                                                  BorderRadius.circular(200.r),
+                                            ),
+                                            child: Row(
+                                              children: [
+                                                SvgPicture.asset(
+                                                    height: 17.h,
+                                                    width: 17.w,
+                                                    "assets/tabs_icon_and_photo/users-check.svg"),
+                                                SizedBox(width: 5.w),
+                                                Text(
+                                                  "Shared",
+                                                  style: TextStyle(
+                                                    color: Colors.white
+                                                        .withOpacity(0.96),
+                                                    fontSize: 10.sp,
+                                                    fontWeight: FontWeight.w400,
+                                                    letterSpacing: -0.10,
+                                                  ),
+                                                ),
+                                              ],
                                             ),
                                           ),
-                                          child: Row(
-                                            children: [
-                                              SvgPicture.asset(
-                                                  height: 17.h,
-                                                  width: 17.w,
-                                                  "assets/tabs_icon_and_photo/users-check.svg"),
-                                              SizedBox(width: 5.w),
-                                              Text(
-                                                "Shared",
-                                                style: TextStyle(
-                                                  color: Colors.white
-                                                      .withOpacity(0.96),
-                                                  fontSize: 10.sp,
-                                                  fontWeight: FontWeight.w400,
-                                                  letterSpacing: -0.10,
-                                                ),
+                                          // SizedBox(
+                                          //   width: 10.w,
+                                          // ),
+                                          Container(
+                                            padding: EdgeInsets.symmetric(
+                                                vertical: 2.h, horizontal: 4.w),
+                                            decoration: ShapeDecoration(
+                                              color:
+                                                  Colors.black.withOpacity(0.1),
+                                              shape: RoundedRectangleBorder(
+                                                borderRadius:
+                                                    BorderRadius.circular(
+                                                        200.r),
                                               ),
-                                            ],
-                                          ),
-                                        ),
-                                        SizedBox(
-                                          width: 10.w,
-                                        ),
-                                        Container(
-                                          padding: EdgeInsets.symmetric(
-                                              vertical: 2.h, horizontal: 4.w),
-                                          decoration: ShapeDecoration(
-                                            color:
-                                                Colors.black.withOpacity(0.1),
-                                            shape: RoundedRectangleBorder(
-                                              borderRadius:
-                                                  BorderRadius.circular(200.r),
+                                            ),
+                                            child: Row(
+                                              children: [
+                                                SvgPicture.asset(
+                                                    height: 17.h,
+                                                    width: 17.w,
+                                                    "assets/tabs_icon_and_photo/lock-01.svg"),
+                                                SizedBox(width: 5.w),
+                                                Text(
+                                                  "Personal",
+                                                  style: TextStyle(
+                                                    color: Colors.white
+                                                        .withOpacity(0.96),
+                                                    fontSize: 10.sp,
+                                                    fontWeight: FontWeight.w400,
+                                                    letterSpacing: -0.10,
+                                                  ),
+                                                ),
+                                              ],
                                             ),
                                           ),
-                                          child: Row(
-                                            children: [
-                                              SvgPicture.asset(
-                                                  height: 17.h,
-                                                  width: 17.w,
-                                                  "assets/tabs_icon_and_photo/lock-01.svg"),
-                                              SizedBox(width: 5.w),
-                                              Text(
-                                                "Personal",
-                                                style: TextStyle(
-                                                  color: Colors.white
-                                                      .withOpacity(0.96),
-                                                  fontSize: 10.sp,
-                                                  fontWeight: FontWeight.w400,
-                                                  letterSpacing: -0.10,
+                                        ],
+                                      ),
+                                      SizedBox(height: 15.h),
+                                      Row(
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.center,
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.end,
+                                        children: [
+                                          GestureDetector(
+                                            onTap: () {},
+                                            child: Text(
+                                              'Clear All',
+                                              textAlign: TextAlign.center,
+                                              style: TextStyle(
+                                                color: Colors.white.withOpacity(
+                                                    0.9599999785423279),
+                                                fontSize: 12.sp,
+                                                fontWeight: FontWeight.w400,
+                                                letterSpacing: -0.14,
+                                              ),
+                                            ),
+                                          ),
+                                          SizedBox(
+                                            width: 10.w,
+                                          ),
+                                          GestureDetector(
+                                            onTap: () {},
+                                            child: Container(
+                                              width: 78.w,
+                                              height: 32.h,
+                                              padding: EdgeInsets.symmetric(
+                                                horizontal: 10.w,
+                                              ),
+                                              decoration: ShapeDecoration(
+                                                color: Color(0xFF5E5CE6),
+                                                shape: RoundedRectangleBorder(
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          200.r),
                                                 ),
                                               ),
-                                            ],
-                                          ),
-                                        ),
-                                      ],
-                                    )
-                                  ],
-                                ),
-                              );
-                            },
-                          )),
+                                              child: Row(
+                                                mainAxisSize: MainAxisSize.min,
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment.center,
+                                                crossAxisAlignment:
+                                                    CrossAxisAlignment.center,
+                                                children: [
+                                                  Text(
+                                                    'Apply',
+                                                    style: TextStyle(
+                                                      color: Colors.white
+                                                          .withOpacity(
+                                                              0.9599999785423279),
+                                                      fontSize: 12.sp,
+                                                      fontWeight:
+                                                          FontWeight.w600,
+                                                    ),
+                                                  ),
+                                                ],
+                                              ),
+                                            ),
+                                          )
+                                        ],
+                                      )
+                                    ],
+                                  ),
+                                );
+                              },
+                            )),
+                      )
                     ];
                   },
                   offset: const Offset(0, 30),
@@ -693,7 +765,7 @@ class _ChunksTabState extends State<ChunksTab> {
                     Text(
                       date,
                       style: TextStyle(
-                        color: Color(0xFF545454),
+                        color: Color(0xF90FFFFFF),
                         fontSize: 10.sp,
                         fontWeight: FontWeight.w400,
                         letterSpacing: -0.10,

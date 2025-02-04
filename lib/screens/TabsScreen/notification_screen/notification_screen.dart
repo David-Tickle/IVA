@@ -1,21 +1,20 @@
-import 'package:iva/screens/folder_screen/tabs/all_tabs.dart';
+import 'package:iva/screens/TabsScreen/notification_screen/tabs/all_notification.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:svg_flutter/svg.dart';
 
-class FolderScreen extends StatefulWidget {
+class NotificationScreen extends StatefulWidget {
   final VoidCallback onTapClose;
 
-  const FolderScreen({
+  const NotificationScreen({
     super.key,
     required this.onTapClose,
   });
 
   @override
-  State<FolderScreen> createState() => _FolderScreenState();
+  State<NotificationScreen> createState() => _NotificationScreenState();
 }
 
-class _FolderScreenState extends State<FolderScreen> {
+class _NotificationScreenState extends State<NotificationScreen> {
   int _currentIndex = 0;
 
   @override
@@ -37,11 +36,22 @@ class _FolderScreenState extends State<FolderScreen> {
           mainAxisAlignment: MainAxisAlignment.start,
           mainAxisSize: MainAxisSize.min, // Added to wrap content
           children: [
+            SizedBox(
+              height: 10.h,
+            ),
+            Divider(
+              thickness: 1,
+              height: 1,
+              color: Color(0xf70FFFFFF),
+            ),
+            SizedBox(
+              height: 10.h,
+            ),
             Row(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Text(
-                  'Documents',
+                  'Notifications',
                   style: TextStyle(
                     color: Colors.white.withOpacity(0.9599999785423279),
                     fontSize: 16.sp,
@@ -72,31 +82,18 @@ class _FolderScreenState extends State<FolderScreen> {
                   child: Row(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      buildNavItem(
-                          index: 0,
-                          assetPath: "assets/folder.svg",
-                          label: "All"),
+                      buildNavItem(index: 0, label: "All"),
                       SizedBox(width: 5.w),
-                      buildNavItem(
-                          index: 1,
-                          assetPath: "assets/tabs_icon_and_photo/lock-01.svg",
-                          label: "Personal"),
+                      buildNavItem(index: 1, label: "Update"),
                       SizedBox(width: 5.w),
-                      buildNavItem(
-                          index: 2,
-                          assetPath:
-                              "assets/tabs_icon_and_photo/users-check.svg",
-                          label: "Shared"),
+                      buildNavItem(index: 2, label: "New Docs"),
                       SizedBox(width: 5.w),
-                      buildNavItem(
-                          index: 3,
-                          assetPath: "assets/globe-04.svg",
-                          label: "Global"),
+                      buildNavItem(index: 3, label: "Unread"),
                     ],
                   ),
                 ),
                 SizedBox(height: 15.h),
-                _currentIndex == 0 ? AllTab() : Container(),
+                _currentIndex == 0 ? AllNotification() : Container(),
                 SizedBox(height: 10.h),
               ],
             )
@@ -108,7 +105,6 @@ class _FolderScreenState extends State<FolderScreen> {
 
   Widget buildNavItem({
     required int index,
-    required String assetPath,
     required String label,
   }) {
     final isSelected = _currentIndex == index;
@@ -141,8 +137,6 @@ class _FolderScreenState extends State<FolderScreen> {
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              SvgPicture.asset(assetPath, height: 20.h, width: 20.w),
-              SizedBox(width: 3.w),
               Text(
                 label,
                 textAlign: TextAlign.center,

@@ -1,21 +1,20 @@
-import 'package:iva/screens/folder_screen/tabs/all_tabs.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:svg_flutter/svg.dart';
 
-class FolderScreen extends StatefulWidget {
+class SettingScreen extends StatefulWidget {
   final VoidCallback onTapClose;
 
-  const FolderScreen({
+  const SettingScreen({
     super.key,
     required this.onTapClose,
   });
 
   @override
-  State<FolderScreen> createState() => _FolderScreenState();
+  State<SettingScreen> createState() => _SettingScreenState();
 }
 
-class _FolderScreenState extends State<FolderScreen> {
+class _SettingScreenState extends State<SettingScreen> {
   int _currentIndex = 0;
 
   @override
@@ -37,11 +36,22 @@ class _FolderScreenState extends State<FolderScreen> {
           mainAxisAlignment: MainAxisAlignment.start,
           mainAxisSize: MainAxisSize.min, // Added to wrap content
           children: [
+            SizedBox(
+              height: 10.h,
+            ),
+            Divider(
+              thickness: 1,
+              height: 1,
+              color: Color(0xf70FFFFFF),
+            ),
+            SizedBox(
+              height: 10.h,
+            ),
             Row(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Text(
-                  'Documents',
+                  'Setting',
                   style: TextStyle(
                     color: Colors.white.withOpacity(0.9599999785423279),
                     fontSize: 16.sp,
@@ -58,48 +68,79 @@ class _FolderScreenState extends State<FolderScreen> {
                     ))
               ],
             ),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisAlignment: MainAxisAlignment.start,
+            SizedBox(
+              height: 10.h,
+            ),
+            Divider(
+              thickness: 1,
+              height: 1,
+              color: Color(0xf70FFFFFF),
+            ),
+            SizedBox(
+              height: 10.h,
+            ),
+            Row(
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                SizedBox(height: 10.h),
-                Container(
-                  padding: EdgeInsets.all(2.w),
-                  decoration: BoxDecoration(
-                    color: Color(0x7FD0D0D0),
-                    borderRadius: BorderRadius.circular(100.r),
-                  ),
-                  child: Row(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      buildNavItem(
-                          index: 0,
-                          assetPath: "assets/folder.svg",
-                          label: "All"),
-                      SizedBox(width: 5.w),
-                      buildNavItem(
-                          index: 1,
-                          assetPath: "assets/tabs_icon_and_photo/lock-01.svg",
-                          label: "Personal"),
-                      SizedBox(width: 5.w),
-                      buildNavItem(
-                          index: 2,
-                          assetPath:
-                              "assets/tabs_icon_and_photo/users-check.svg",
-                          label: "Shared"),
-                      SizedBox(width: 5.w),
-                      buildNavItem(
-                          index: 3,
-                          assetPath: "assets/globe-04.svg",
-                          label: "Global"),
-                    ],
+                SvgPicture.asset("assets/settings-02.svg"),
+                SizedBox(
+                  width: 10.w,
+                ),
+                Text(
+                  'Account Settings',
+                  style: TextStyle(
+                    color: Colors.white.withOpacity(0.9599999785423279),
+                    fontSize: 16.sp,
+                    fontWeight: FontWeight.w400,
+                    letterSpacing: -0.16,
                   ),
                 ),
-                SizedBox(height: 15.h),
-                _currentIndex == 0 ? AllTab() : Container(),
-                SizedBox(height: 10.h),
+                Spacer(),
+                GestureDetector(
+                    onTap: () {},
+                    child: Icon(
+                      Icons.arrow_forward_ios,
+                      color: Colors.white,
+                    ))
               ],
-            )
+            ),
+            SizedBox(
+              height: 10.h,
+            ),
+            Divider(
+              thickness: 1,
+              height: 1,
+              color: Color(0xf70FFFFFF),
+            ),
+            SizedBox(
+              height: 10.h,
+            ),
+            Row(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                SvgPicture.asset(
+                    "assets/tabs_icon_and_photo/message-chat-square.svg"),
+                SizedBox(
+                  width: 10.w,
+                ),
+                Text(
+                  'Feedback',
+                  style: TextStyle(
+                    color: Colors.white.withOpacity(0.9599999785423279),
+                    fontSize: 16.sp,
+                    fontWeight: FontWeight.w400,
+                    letterSpacing: -0.16,
+                  ),
+                ),
+                Spacer(),
+                GestureDetector(
+                    onTap: () {},
+                    child: Icon(
+                      Icons.arrow_forward_ios,
+                      color: Colors.white,
+                    ))
+              ],
+            ),
           ],
         ),
       ),
@@ -108,7 +149,6 @@ class _FolderScreenState extends State<FolderScreen> {
 
   Widget buildNavItem({
     required int index,
-    required String assetPath,
     required String label,
   }) {
     final isSelected = _currentIndex == index;
@@ -141,8 +181,6 @@ class _FolderScreenState extends State<FolderScreen> {
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              SvgPicture.asset(assetPath, height: 20.h, width: 20.w),
-              SizedBox(width: 3.w),
               Text(
                 label,
                 textAlign: TextAlign.center,

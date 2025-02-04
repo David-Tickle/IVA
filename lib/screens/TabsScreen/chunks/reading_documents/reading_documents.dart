@@ -3,8 +3,13 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:svg_flutter/svg.dart';
 
 class ReadingDocuments extends StatefulWidget {
+  final VoidCallback onTapSearch;
+  final VoidCallback onTapClose;
+
   const ReadingDocuments({
     super.key,
+    required this.onTapSearch,
+    required this.onTapClose,
   });
 
   @override
@@ -15,8 +20,8 @@ class _ReadingDocumentsState extends State<ReadingDocuments> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 360.w, // Corrected MediaQuery usage
-      height: 660.h,
+      width: 320.w, // Corrected MediaQuery usage
+      height: 620.h,
       margin: EdgeInsets.only(bottom: 16.h),
       padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 10.h),
       decoration: BoxDecoration(
@@ -52,9 +57,13 @@ class _ReadingDocumentsState extends State<ReadingDocuments> {
                   child: SvgPicture.asset("assets/link-01.svg"),
                 ),
                 SizedBox(width: 10.w),
-                SvgPicture.asset("assets/search-md.svg"),
+                GestureDetector(
+                    onTap: widget.onTapSearch,
+                    child: SvgPicture.asset("assets/search-md.svg")),
                 SizedBox(width: 10.w),
-                const Icon(Icons.close, color: Colors.white),
+                GestureDetector(
+                    onTap: widget.onTapClose,
+                    child: const Icon(Icons.close, color: Colors.white)),
               ],
             ),
             SizedBox(
@@ -91,7 +100,7 @@ class _ReadingDocumentsState extends State<ReadingDocuments> {
                 Text(
                   "Jan, 5, 2025",
                   style: TextStyle(
-                    color: Color(0xFF545454),
+                    color: Colors.white.withOpacity(0.96),
                     fontSize: 10.sp,
                     fontWeight: FontWeight.w400,
                     letterSpacing: -0.10,
@@ -205,7 +214,7 @@ class _ReadingDocumentsState extends State<ReadingDocuments> {
                   Text(
                     'of 16',
                     style: TextStyle(
-                      color: Color(0xFF545454),
+                      color: Colors.white.withOpacity(0.96),
                       fontSize: 12.sp,
                       fontWeight: FontWeight.w400,
                     ),
@@ -226,7 +235,7 @@ class _ReadingDocumentsState extends State<ReadingDocuments> {
               padding: EdgeInsets.all(10.w),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(10.r),
-                color: Color(0xf60888789),
+                color: Color(0x7FD0D0D0),
               ),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
